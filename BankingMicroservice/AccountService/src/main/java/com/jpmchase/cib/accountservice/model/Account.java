@@ -18,7 +18,6 @@ public class Account implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
 
-
     private String accountNo;
 
 }

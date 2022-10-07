@@ -1,13 +1,15 @@
 spring:
   application:
     name: eureka-server
+  config:
+    import: "optional:configserver:http://localhost:8080"
   cloud:
     loadbalancer:
       ribbon:
         enabled: false
 
 server:
-  port: 8769
+  port: 8761
 
 eureka:
   instance:
@@ -15,5 +17,3 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

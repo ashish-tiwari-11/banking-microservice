@@ -1,4 +1,4 @@
-package com.jpmchase.cib.loanservice;
+package com.jpmchase.cib.bankinggateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class LoanServiceApplication {
+public class BankingGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LoanServiceApplication.class, args);
+        SpringApplication.run(BankingGatewayApplication.class, args);
     }
 
 }

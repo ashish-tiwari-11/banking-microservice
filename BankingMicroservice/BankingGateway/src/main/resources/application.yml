@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: BankingGateway
+  config:
+    import: "optional:configserver:http://localhost:8080"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  app:
+    name: Gateway Server Microservice
+    description: Microservice example for Bootcamp
+    version: 1.0.0
+
+logging:
+  level:
+    com:
+      jpmchase:
+        cib:
+          bankinggateway: debug

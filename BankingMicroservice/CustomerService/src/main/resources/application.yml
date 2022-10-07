@@ -1,6 +1,10 @@
 spring:
+  config:
+    import: "optional:configserver:http://localhost:8080"
+  application:
+    name: customerservice
   datasource:
-    url: jdbc:mysql://mysqldb:3306/bankingms
+    url: jdbc:mysql://localhost:3306/bankingms
     username: root
     password: aceEM@11
   jpa:
@@ -14,12 +18,8 @@ spring:
 server:
   port: 8081
 
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: debug
-        type:
-          descriptor:
-            sql:
-              BasicBinder: trace
+info:
+  app:
+    name: Customer Service App
+    description: A domain based microservice
+    version: 1.0.0

@@ -1,6 +1,11 @@
 spring:
+  application:
+    name: configserver
   cloud:
     config:
       server:
+        bootstrap: true
         git:
-          uri: https://github.com/ashishM11/banking-microservices.git
+          clone-on-start: true
+          default-label: master
+          uri: https://github.com/ashish-tiwari-11/banking-microservice-configuration.git
