@@ -1,5 +1,7 @@
 package com.jpmchase.cib.customerservice.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +31,8 @@ public class Branch implements Serializable {
     @Column(name = "branchCreationDT")
     private LocalDateTime branchCreationDT;
 
-    @OneToMany(mappedBy = "branch")
+    @OneToMany(mappedBy = "branch",fetch = FetchType.LAZY)
+    @JsonBackReference
     Set<Customer> customerSet;
 
 }

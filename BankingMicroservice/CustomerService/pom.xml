@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jpmchase.cib</groupId>
-    <artifactId>CustomerService</artifactId>
+    <artifactId>customerservice</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <name>CustomerService</name>
     <description>CustomerService</description>
@@ -80,6 +80,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <image>
+                        <name>manosoft/${project.artifactId}</name>
+                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>

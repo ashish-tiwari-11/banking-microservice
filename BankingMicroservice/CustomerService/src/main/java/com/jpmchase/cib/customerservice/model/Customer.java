@@ -1,5 +1,7 @@
 package com.jpmchase.cib.customerservice.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,5 +38,6 @@ public class Customer implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "branchId", nullable = false)
+    @JsonManagedReference
     private Branch branch;
 }

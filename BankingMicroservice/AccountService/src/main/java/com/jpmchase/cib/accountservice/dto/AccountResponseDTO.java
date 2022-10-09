@@ -8,13 +8,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class AccountRequestDTO {
+@AllArgsConstructor
+public class AccountResponseDTO {
 
+    private Long accountId;
     private String accountNo;
     private String accountType;
     private LocalDateTime accountCreationDT;
-    private Long custId;
-
+    private CustomerResponseDTO customerResponseDTO;
 }

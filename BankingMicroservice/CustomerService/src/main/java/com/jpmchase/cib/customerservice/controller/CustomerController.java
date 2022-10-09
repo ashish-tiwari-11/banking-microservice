@@ -1,7 +1,9 @@
 package com.jpmchase.cib.customerservice.controller;
 
+import com.jpmchase.cib.customerservice.dto.BranchResponseDTO;
 import com.jpmchase.cib.customerservice.dto.CustomerRequestDTO;
 import com.jpmchase.cib.customerservice.dto.CustomerResponseDTO;
+import com.jpmchase.cib.customerservice.model.Branch;
 import com.jpmchase.cib.customerservice.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,11 @@ public class CustomerController {
     @GetMapping("/customer/{custId}")
     public ResponseEntity<CustomerResponseDTO> getCustomerById(@PathVariable(value = "custId") String custId) {
         return new ResponseEntity<>(customerService.getCustomerById(Long.valueOf(custId)), HttpStatus.OK);
+    }
+
+    @GetMapping("/customer/{custId}/branch")
+    public ResponseEntity<Branch> getBranchByBranchId(@PathVariable(value = "custId") Long custId) {
+        return new ResponseEntity<>(customerService.getBranchByCustId(custId), HttpStatus.OK);
     }
 
     @GetMapping("/customer/all")

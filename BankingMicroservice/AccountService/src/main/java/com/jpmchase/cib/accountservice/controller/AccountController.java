@@ -1,6 +1,7 @@
 package com.jpmchase.cib.accountservice.controller;
 
 import com.jpmchase.cib.accountservice.dto.AccountRequestDTO;
+import com.jpmchase.cib.accountservice.dto.AccountResponseDTO;
 import com.jpmchase.cib.accountservice.model.Account;
 import com.jpmchase.cib.accountservice.service.AccountService;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class AccountController {
     }
 
     @GetMapping("/account/{acctNo}")
-    public ResponseEntity<Account> getAccountById(@PathVariable(value = "acctNo") String acctNo) {
+    public ResponseEntity<AccountResponseDTO> getAccountById(@PathVariable(value = "acctNo") String acctNo) {
         return new ResponseEntity<>(accountService.getAccountByAcctNo(acctNo), HttpStatus.OK);
     }
 
