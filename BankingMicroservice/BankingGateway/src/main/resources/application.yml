@@ -13,12 +13,10 @@ spring:
           uri: lb://ACCOUNTSERVICE
           predicates:
             - Path=/api/v1/account/**
-#            - Path=/api/v1/account/**/**
         - id: CUSTOMERSERVICE
           uri: lb://CUSTOMERSERVICE
           predicates:
             - Path=/api/v1/customer/**
-#            - Path=/api/v1/customer/**/**
 
 management:
   endpoints:
