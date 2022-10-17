@@ -5,6 +5,7 @@ import com.jpmchase.cib.customerservice.dto.CustomerRequestDTO;
 import com.jpmchase.cib.customerservice.dto.CustomerResponseDTO;
 import com.jpmchase.cib.customerservice.model.Branch;
 import com.jpmchase.cib.customerservice.service.CustomerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@Slf4j
 public class CustomerController {
 
     private final CustomerService customerService;

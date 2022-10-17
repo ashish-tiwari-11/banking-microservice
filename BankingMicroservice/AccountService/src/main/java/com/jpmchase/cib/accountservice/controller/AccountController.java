@@ -4,6 +4,7 @@ import com.jpmchase.cib.accountservice.dto.AccountRequestDTO;
 import com.jpmchase.cib.accountservice.dto.AccountResponseDTO;
 import com.jpmchase.cib.accountservice.model.Account;
 import com.jpmchase.cib.accountservice.service.AccountService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
+@Slf4j
 public class AccountController {
 
     private final AccountService accountService;
@@ -27,7 +29,7 @@ public class AccountController {
     }
 
     @GetMapping("/account/all")
-    public ResponseEntity<List<Account>> getAllAccounts() {
+    public ResponseEntity<List<AccountResponseDTO>> getAllAccounts() {
         return new ResponseEntity<>(accountService.getAllAccounts(), HttpStatus.OK);
     }
 

@@ -1,5 +1,20 @@
 spring:
-  application:
-    name: ACCOUNTSERVICE
   config:
-    import: "optional:configserver:http://localhost:8080"
+    import: 'optional:configserver:http://localhost:8080'
+  application:
+    name: accountservice
+  datasource:
+    url: 'jdbc:oracle:thin:@localhost:1521/myOracleDB'
+    username: SYSTEM
+    password: aceEM@11
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+logging:
+  file:
+    name: 'D:/intelliJ-workspace/logs/application.log'

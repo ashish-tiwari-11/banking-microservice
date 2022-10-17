@@ -40,7 +40,7 @@ public class Loan implements Serializable {
     @Column(name = "loanPendingAmount", nullable = false)
     private int loanPendingAmount;
 
-    @ManyToOne
-    private Customer customer;
+    @Column(name= "customerId", nullable = false)
+    private Long customerId;
 
 }

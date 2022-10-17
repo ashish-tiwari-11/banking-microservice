@@ -1,6 +1,6 @@
 spring:
   application:
-    name: BankingGateway
+    name: bankinggateway
   config:
     import: "optional:configserver:http://localhost:8080"
   cloud:
@@ -36,3 +36,6 @@ logging:
       jpmchase:
         cib:
           bankinggateway: debug
+
+server:
+  port: 8085

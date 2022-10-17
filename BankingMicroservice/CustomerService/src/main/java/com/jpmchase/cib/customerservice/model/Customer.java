@@ -38,6 +38,5 @@ public class Customer implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "branchId", nullable = false)
-    @JsonManagedReference
     private Branch branch;
 }

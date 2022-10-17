@@ -3,8 +3,28 @@ spring:
     import: "optional:configserver:http://localhost:8080"
   application:
     name: customerservice
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/myOracleDB
+    username: SYSTEM
+    password: aceEM@11
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
 info:
   app:
     name: Customer Service App
     description: A domain based microservice
     version: 1.0.0
+
+logging:
+  file:
+    name: D:/intelliJ-workspace/logs/application.log
+
+server:
+  port: 8081
