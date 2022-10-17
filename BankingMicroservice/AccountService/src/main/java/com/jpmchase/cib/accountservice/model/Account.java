@@ -27,6 +27,9 @@ public class Account implements Serializable {
     @Column(name = "acctType", nullable = false)
     private String accountType;
 
+    @Column(name = "acctBalance", nullable = false)
+    private Double accountBalance;
+
     @Column(name = "acctCreationDT", nullable = false)
     private LocalDateTime accountCreationDT;
 

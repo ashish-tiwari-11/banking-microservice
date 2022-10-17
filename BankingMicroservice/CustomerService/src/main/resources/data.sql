@@ -21,10 +21,7 @@ CREATE TABLE IF NOT EXISTS `tblcustomer`(
     branchId bigint not null,
     custCreationDT datetime not null default current_timestamp,
     constraint fk_branch foreign key(branchId) references tblbranch(branchId)
-    on update cascade
-    on delete cascade
 );
-truncate table tblcustomer;
 
 DROP TABLE IF EXISTS `tblaccount`;
 CREATE TABLE IF NOT EXISTS `tblaccount`(
@@ -35,16 +32,4 @@ CREATE TABLE IF NOT EXISTS `tblaccount`(
     acctCreationDT datetime not null default current_timestamp,
     primary key(acctId,acctNo,custId,acctType),
     constraint fk_customer foreign key(custId) references tblcustomer(custId)
-    on update cascade
-    on delete cascade
 );
-
-
-CREATE TRIGGER after_tblaccount_insert
-AFTER INSERT ON tblaccount
-FOR EACH ROW
-BEGIN
-	UPDATE tblaccount
-    SET NEW.acctNo = CONCAT('JPMC', LPAD(LAST_INSERT_ID(), 7, '0'))
-    WHERE acctId=NEW.acctId;
-END;
