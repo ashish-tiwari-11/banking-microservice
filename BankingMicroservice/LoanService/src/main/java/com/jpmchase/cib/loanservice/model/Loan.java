@@ -22,9 +22,6 @@ public class Loan implements Serializable {
     @Column(name = "loanTenure", nullable = false)
     private int loanTenure;
 
-    @Column(name = "loanTenureType", nullable = false)
-    private String loanTenureType;
-
     @Column(name = "loanType", nullable = false)
     private String loanType;
 
@@ -40,7 +37,7 @@ public class Loan implements Serializable {
     @Column(name = "loanPendingAmount", nullable = false)
     private int loanPendingAmount;
 
-    @Column(name= "customerId", nullable = false)
-    private Long customerId;
+    @Column(name= "acctNo", nullable = false)
+    private String acctNo;
 
 }

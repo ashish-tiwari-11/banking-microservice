@@ -17,4 +17,5 @@ public class AccountResponseDTO {
     private String accountType;
     private LocalDateTime accountCreationDT;
     private CustomerResponseDTO customerResponseDTO;
+    private double accountBalance;
 }

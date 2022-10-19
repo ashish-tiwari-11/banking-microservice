@@ -21,6 +21,7 @@ public class AccountRequestResponseTransformation {
             account.setAccountNo(requestDTO.getAccountNo());
             account.setAccountType(requestDTO.getAccountType());
             account.setAccountCreationDT(LocalDateTime.now());
+            account.setAccountBalance(requestDTO.getAccountBalance());
             account.setCustId(requestDTO.getCustId());
         }
         return account;
@@ -50,7 +51,7 @@ public class AccountRequestResponseTransformation {
         responseDTO.setAccountType(account.getAccountType());
         responseDTO.setAccountNo(account.getAccountNo());
         responseDTO.setAccountCreationDT(account.getAccountCreationDT());
-
+        responseDTO.setAccountBalance(account.getAccountBalance());
         CustomerResponseDTO customerResponseDTO = fromCustomerEntityToResponseDTO(customer);
         customerResponseDTO.setBranchResponseDTO(fromBranchEntityToResponseDTO(branch));
 

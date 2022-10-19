@@ -8,6 +8,7 @@ import com.jpmchase.cib.accountservice.model.Customer;
 import com.jpmchase.cib.accountservice.repository.AccountRepo;
 import com.jpmchase.cib.accountservice.transform.AccountRequestResponseTransformation;
 import com.netflix.discovery.util.StringUtil;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

@@ -15,6 +15,7 @@ public class AccountRequestDTO {
     private String accountNo;
     private String accountType;
     private LocalDateTime accountCreationDT;
+    private double accountBalance;
     private Long custId;
 
 }

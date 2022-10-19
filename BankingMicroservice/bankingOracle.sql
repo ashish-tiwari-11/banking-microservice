@@ -89,3 +89,48 @@ BEGIN
  SELECT tblaccount_seq.NEXTVAL INTO :NEW.acctId FROM DUAL;
 END;
 /
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+create table tblloanType(
+	loanTypeId NUMBER(19) NOT NULL PRIMARY KEY,
+    loanType VARCHAR2(3) NOT NULL UNIQUE,
+    loanTypeDesc VARCHAR2(20) NOT NULL
+);
+
+-- Generate ID using sequence and trigger
+create sequence tblloanType_seq start with 1 increment by 1;
+
+create or replace trigger tblloanType_seq_tr
+ before insert on tblloanType for each row
+ when (new.loanTypeId is null)
+begin
+ select tblloanType_seq.nextval into :new.loanTypeId from dual;
+end;
+/
+
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+create table tblloan(
+loanId  NUMBER(19) NOT NULL PRIMARY KEY,
+loanAcctNo VARCHAR2(11) NOT NULL unique,
+            loanStartDate DATE NOT NULL,
+    loanTenure NUMBER(10) NOT NULL,
+            loanType VARCHAR2(3) NOT NULL,
+    loanROI binary_double NOT NULL,
+            loanCreationDT TIMESTAMP(0) default systimestamp NOT NULL,
+    loanAmount BINARY_DOUBLE NOT NULL,
+            loanPendingAmount BINARY_DOUBLE NOT NULL,
+    acctNo VARCHAR2(11) NOT NULL
+);
+
+-- Generate ID using sequence and trigger
+create sequence tblloan_seq start with 1 increment by 1;
+
+create or replace trigger tblloan_seq_tr
+ before insert on tblloan for each row
+ when (new.loanId is null)
+begin
+ select tblloan_seq.nextval into :new.loanId from dual;
+end;
+/
+-- SQLINES LICENSE FOR EVALUATION USE ONLY
+insert into tblloantype(loanType,loanTypeDesc)
+coalesce('PL','Personal Loan'),('BL','Business Loan'),('2WL','Two Wheeler Loan'),('HL','Home Loan'),('GL','Gold Loan'),('4WL','Four Wheeler Loan');

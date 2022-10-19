@@ -27,7 +27,7 @@ public class Account implements Serializable {
     @Column(name = "acctType", nullable = false)
     private String accountType;
 
-    @Column(name = "acctBalance", nullable = false)
+    @Column(name = "acctBal", nullable = false)
     private Double accountBalance;
 
     @Column(name = "acctCreationDT", nullable = false)
